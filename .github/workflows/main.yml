@@ -26,7 +26,6 @@ jobs:
 
     - name: Run Linter
       run: |
-        # Run flake8 linter on all Python files in the repository
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
   lint_js:
@@ -39,7 +38,7 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'  # Updated to Node.js 20
+        node-version: '20'
 
     - name: Install ESLint
       run: |
@@ -47,6 +46,5 @@ jobs:
 
     - name: Run Linter
       run: |
-        # Run eslint linter on all JavaScript files in the repository
+        # Lint JavaScript files recursively
         eslint . --ext .js,.jsx
-
